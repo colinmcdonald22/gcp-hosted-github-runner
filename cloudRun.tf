@@ -25,7 +25,7 @@ resource "google_cloud_run_v2_service" "autoscaler" {
     max_instance_request_concurrency = var.max_concurrency
     timeout                          = format("%ds", var.autoscaler_timeout)
     scaling {
-      min_instance_count = 0
+      min_instance_count = 1
       max_instance_count = 1
     }
     containers {
